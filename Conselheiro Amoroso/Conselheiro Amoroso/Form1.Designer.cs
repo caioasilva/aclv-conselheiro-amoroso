@@ -28,42 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.buttonSim = new System.Windows.Forms.Button();
+            this.buttonNao = new System.Windows.Forms.Button();
+            this.labelNumero = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.button3 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
+            this.buttonVoltar = new System.Windows.Forms.Button();
+            this.labelPergunta = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // buttonSim
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.Location = new System.Drawing.Point(12, 133);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(172, 48);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Sim";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonSim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonSim.Location = new System.Drawing.Point(12, 133);
+            this.buttonSim.Name = "buttonSim";
+            this.buttonSim.Size = new System.Drawing.Size(172, 48);
+            this.buttonSim.TabIndex = 0;
+            this.buttonSim.Text = "Sim";
+            this.buttonSim.UseVisualStyleBackColor = true;
+            this.buttonSim.Click += new System.EventHandler(this.buttonSim_Click);
             // 
-            // button2
+            // buttonNao
             // 
-            this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(200, 133);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(172, 48);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Não";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonNao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonNao.Location = new System.Drawing.Point(200, 133);
+            this.buttonNao.Name = "buttonNao";
+            this.buttonNao.Size = new System.Drawing.Size(172, 48);
+            this.buttonNao.TabIndex = 1;
+            this.buttonNao.Text = "Não";
+            this.buttonNao.UseVisualStyleBackColor = true;
+            this.buttonNao.Click += new System.EventHandler(this.buttonNao_Click);
             // 
-            // label1
+            // labelNumero
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 63);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Pergunta 1:";
+            this.labelNumero.AutoSize = true;
+            this.labelNumero.Location = new System.Drawing.Point(12, 63);
+            this.labelNumero.Name = "labelNumero";
+            this.labelNumero.Size = new System.Drawing.Size(62, 13);
+            this.labelNumero.TabIndex = 2;
+            this.labelNumero.Text = "Pergunta 1:";
             // 
             // progressBar1
             // 
@@ -74,36 +76,36 @@
             this.progressBar1.Size = new System.Drawing.Size(360, 23);
             this.progressBar1.TabIndex = 3;
             // 
-            // button3
+            // buttonVoltar
             // 
-            this.button3.Location = new System.Drawing.Point(13, 13);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Voltar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonVoltar.Location = new System.Drawing.Point(13, 13);
+            this.buttonVoltar.Name = "buttonVoltar";
+            this.buttonVoltar.Size = new System.Drawing.Size(75, 23);
+            this.buttonVoltar.TabIndex = 4;
+            this.buttonVoltar.Text = "Voltar";
+            this.buttonVoltar.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // labelPergunta
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 76);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(222, 33);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Você é bonito?";
+            this.labelPergunta.AutoSize = true;
+            this.labelPergunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPergunta.Location = new System.Drawing.Point(12, 76);
+            this.labelPergunta.Name = "labelPergunta";
+            this.labelPergunta.Size = new System.Drawing.Size(222, 33);
+            this.labelPergunta.TabIndex = 5;
+            this.labelPergunta.Text = "Você é bonito?";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 235);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.labelPergunta);
+            this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.progressBar1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.labelNumero);
+            this.Controls.Add(this.buttonNao);
+            this.Controls.Add(this.buttonSim);
             this.Name = "Form1";
             this.Text = "Conselheiro Amoroso";
             this.ResumeLayout(false);
@@ -113,12 +115,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonSim;
+        private System.Windows.Forms.Button buttonNao;
+        private System.Windows.Forms.Label labelNumero;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonVoltar;
+        private System.Windows.Forms.Label labelPergunta;
     }
 }
 

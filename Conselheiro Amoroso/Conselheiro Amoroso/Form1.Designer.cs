@@ -34,6 +34,8 @@
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.labelPergunta = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonSim
@@ -69,11 +71,11 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(12, 200);
+            this.progressBar1.Location = new System.Drawing.Point(6, 15);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(360, 23);
+            this.progressBar1.Size = new System.Drawing.Size(361, 23);
             this.progressBar1.TabIndex = 3;
             // 
             // buttonVoltar
@@ -95,19 +97,32 @@
             this.labelPergunta.TabIndex = 5;
             this.labelPergunta.Text = "Você é bonito?";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.progressBar1);
+            this.groupBox1.Location = new System.Drawing.Point(6, 187);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(373, 45);
+            this.groupBox1.TabIndex = 7;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Barra do Amor";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(384, 235);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelPergunta);
             this.Controls.Add(this.buttonVoltar);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.labelNumero);
             this.Controls.Add(this.buttonNao);
             this.Controls.Add(this.buttonSim);
             this.Name = "Form1";
             this.Text = "Conselheiro Amoroso";
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,6 +136,7 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button buttonVoltar;
         private System.Windows.Forms.Label labelPergunta;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

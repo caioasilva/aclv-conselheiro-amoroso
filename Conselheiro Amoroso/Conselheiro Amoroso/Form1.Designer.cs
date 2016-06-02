@@ -31,10 +31,10 @@
             this.buttonSim = new System.Windows.Forms.Button();
             this.buttonNao = new System.Windows.Forms.Button();
             this.labelNumero = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.labelPergunta = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.progressBar1 = new Conselheiro_Amoroso.RedProgressBar();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,15 +69,6 @@
             this.labelNumero.TabIndex = 2;
             this.labelNumero.Text = "Pergunta 1:";
             // 
-            // progressBar1
-            // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(6, 15);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(361, 23);
-            this.progressBar1.TabIndex = 3;
-            // 
             // buttonVoltar
             // 
             this.buttonVoltar.Location = new System.Drawing.Point(13, 13);
@@ -90,12 +81,12 @@
             // labelPergunta
             // 
             this.labelPergunta.AutoSize = true;
-            this.labelPergunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPergunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPergunta.Location = new System.Drawing.Point(12, 76);
             this.labelPergunta.Name = "labelPergunta";
-            this.labelPergunta.Size = new System.Drawing.Size(222, 33);
+            this.labelPergunta.Size = new System.Drawing.Size(118, 29);
             this.labelPergunta.TabIndex = 5;
-            this.labelPergunta.Text = "Você é bonito?";
+            this.labelPergunta.Text = "Pergunta";
             // 
             // groupBox1
             // 
@@ -108,6 +99,20 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Barra do Amor";
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.BackColor = System.Drawing.Color.Red;
+            this.progressBar1.ForeColor = System.Drawing.Color.DarkRed;
+            this.progressBar1.Location = new System.Drawing.Point(6, 15);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(361, 23);
+            this.progressBar1.Step = 1;
+            this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.progressBar1.TabIndex = 3;
+            this.progressBar1.Value = 50;
             // 
             // Form1
             // 
@@ -133,10 +138,10 @@
         private System.Windows.Forms.Button buttonSim;
         private System.Windows.Forms.Button buttonNao;
         private System.Windows.Forms.Label labelNumero;
-        private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Button buttonVoltar;
         private System.Windows.Forms.Label labelPergunta;
         private System.Windows.Forms.GroupBox groupBox1;
+        private RedProgressBar progressBar1;
     }
 }
 

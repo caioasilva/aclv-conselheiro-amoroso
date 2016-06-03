@@ -22,6 +22,7 @@ namespace Conselheiro_Amoroso
 
         Node<int> atual = null;
         int chance = 50;
+        int n_per = 1;
         public Form1()
         {
             InitializeComponent();
@@ -38,19 +39,20 @@ namespace Conselheiro_Amoroso
             perguntas[4].valor = 5;
 
             atual = new Node<int>(2);
-                atual.esq = new Node<int>(3);
-                    atual.esq.esq = new Node<int>(0);
-                        atual.esq.esq.esq = new Node<int>(4);
-                        atual.esq.esq.dir = new Node<int>(1);
-                    atual.esq.dir = new Node<int>(0);
-                        atual.esq.dir.esq = new Node<int>(1);
-                        atual.esq.dir.dir = new Node<int>(1);
-                atual.dir = new Node<int>(0);
-                    atual.dir.esq = new Node<int>(1);
-                    atual.dir.dir = new Node<int>(1);
+                atual.sim = new Node<int>(3);
+                    atual.sim.sim = new Node<int>(0);
+                        atual.sim.sim.sim = new Node<int>(4);
+                        atual.sim.sim.nao = new Node<int>(1);
+                    atual.sim.nao = new Node<int>(0);
+                        atual.sim.nao.sim = new Node<int>(1);
+                        atual.sim.nao.nao = new Node<int>(1);
+                atual.nao = new Node<int>(0);
+                    atual.nao.sim = new Node<int>(1);
+                    atual.nao.nao = new Node<int>(1);
 
 
             labelPergunta.Text = perguntas[atual.info].texto;
+            labelNumero.Text = "Pergunta " + n_per++.ToString();
             progressBar1.Value = chance;
         }
 
@@ -59,6 +61,7 @@ namespace Conselheiro_Amoroso
             if (atual != null)
             {
                 labelPergunta.Text = perguntas[atual.info].texto;
+                labelNumero.Text = "Pergunta " + n_per++.ToString();
                 progressBar1.Value = chance;
             }
             else
@@ -72,14 +75,14 @@ namespace Conselheiro_Amoroso
         private void buttonNao_Click(object sender, EventArgs e)
         {
             chance -= perguntas[atual.info].valor;
-            atual = atual.dir;
+            atual = atual.nao;
             updateForm();
         }
 
         private void buttonSim_Click(object sender, EventArgs e)
         {
             chance += perguntas[atual.info].valor;
-            atual = atual.esq;
+            atual = atual.sim;
             updateForm();
         }
     }

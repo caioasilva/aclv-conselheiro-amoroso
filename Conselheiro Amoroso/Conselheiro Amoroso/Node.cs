@@ -8,13 +8,13 @@ namespace Conselheiro_Amoroso
     class Node<T>
     {
         public T info;
-        public Node<T> esq, dir;
+        public Node<T> sim, nao;
 
         public Node(T info)
         {
             this.info = info;
-            esq = null;
-            dir = null;
+            sim = null;
+            nao = null;
         }
     }
 }

@@ -41,7 +41,7 @@
             // buttonSim
             // 
             this.buttonSim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonSim.Location = new System.Drawing.Point(12, 133);
+            this.buttonSim.Location = new System.Drawing.Point(12, 459);
             this.buttonSim.Name = "buttonSim";
             this.buttonSim.Size = new System.Drawing.Size(172, 48);
             this.buttonSim.TabIndex = 0;
@@ -52,7 +52,7 @@
             // buttonNao
             // 
             this.buttonNao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNao.Location = new System.Drawing.Point(200, 133);
+            this.buttonNao.Location = new System.Drawing.Point(600, 459);
             this.buttonNao.Name = "buttonNao";
             this.buttonNao.Size = new System.Drawing.Size(172, 48);
             this.buttonNao.TabIndex = 1;
@@ -80,11 +80,13 @@
             // 
             // labelPergunta
             // 
+            this.labelPergunta.AutoEllipsis = true;
             this.labelPergunta.AutoSize = true;
-            this.labelPergunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPergunta.Font = new System.Drawing.Font("Kaufmann BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPergunta.Location = new System.Drawing.Point(12, 76);
+            this.labelPergunta.MaximumSize = new System.Drawing.Size(350, 0);
             this.labelPergunta.Name = "labelPergunta";
-            this.labelPergunta.Size = new System.Drawing.Size(118, 29);
+            this.labelPergunta.Size = new System.Drawing.Size(126, 42);
             this.labelPergunta.TabIndex = 5;
             this.labelPergunta.Text = "Pergunta";
             // 
@@ -93,9 +95,9 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.progressBar1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 187);
+            this.groupBox1.Location = new System.Drawing.Point(6, 513);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(373, 45);
+            this.groupBox1.Size = new System.Drawing.Size(773, 45);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Barra do Amor";
@@ -108,7 +110,7 @@
             this.progressBar1.ForeColor = System.Drawing.Color.DarkRed;
             this.progressBar1.Location = new System.Drawing.Point(6, 15);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(361, 23);
+            this.progressBar1.Size = new System.Drawing.Size(761, 23);
             this.progressBar1.Step = 1;
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 3;
@@ -118,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 235);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.labelPergunta);
             this.Controls.Add(this.buttonVoltar);

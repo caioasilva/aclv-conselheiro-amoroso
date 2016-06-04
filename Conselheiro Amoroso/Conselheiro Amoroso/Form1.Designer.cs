@@ -31,6 +31,7 @@ namespace Conselheiro_Amoroso
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.buttonSim = new System.Windows.Forms.Button();
             this.buttonNao = new System.Windows.Forms.Button();
@@ -38,8 +39,10 @@ namespace Conselheiro_Amoroso
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.labelPergunta = new System.Windows.Forms.Label();
             this.labelVoltar = new System.Windows.Forms.Label();
-            this.progressBar1 = new Conselheiro_Amoroso.RedProgressBar();
             this.labelBarra = new System.Windows.Forms.Label();
+            this.timerUpdateBarra = new System.Windows.Forms.Timer(this.components);
+            this.labelBarraValue = new System.Windows.Forms.Label();
+            this.progressBar1 = new Conselheiro_Amoroso.RedProgressBar();
             this.SuspendLayout();
             // 
             // buttonSim
@@ -154,6 +157,39 @@ namespace Conselheiro_Amoroso
             this.labelVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.labelVoltar.Visible = false;
             // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.BackColor = System.Drawing.Color.Transparent;
+            this.labelBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBarra.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelBarra.Location = new System.Drawing.Point(374, 3);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(132, 24);
+            this.labelBarra.TabIndex = 11;
+            this.labelBarra.Text = "Barra do Amor";
+            // 
+            // timerUpdateBarra
+            // 
+            this.timerUpdateBarra.Interval = 8;
+            this.timerUpdateBarra.Tick += new System.EventHandler(this.timerUpdateBarra_Tick);
+            // 
+            // labelBarraValue
+            // 
+            this.labelBarraValue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelBarraValue.AutoSize = true;
+            this.labelBarraValue.BackColor = System.Drawing.Color.Transparent;
+            this.labelBarraValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelBarraValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBarraValue.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelBarraValue.Location = new System.Drawing.Point(747, 70);
+            this.labelBarraValue.Name = "labelBarraValue";
+            this.labelBarraValue.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.labelBarraValue.Size = new System.Drawing.Size(45, 24);
+            this.labelBarraValue.TabIndex = 12;
+            this.labelBarraValue.Text = "50%";
+            this.labelBarraValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -168,17 +204,7 @@ namespace Conselheiro_Amoroso
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 3;
             this.progressBar1.Value = 50;
-            // 
-            // labelBarra
-            // 
-            this.labelBarra.AutoSize = true;
-            this.labelBarra.BackColor = System.Drawing.Color.Transparent;
-            this.labelBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBarra.Location = new System.Drawing.Point(374, 2);
-            this.labelBarra.Name = "labelBarra";
-            this.labelBarra.Size = new System.Drawing.Size(132, 24);
-            this.labelBarra.TabIndex = 11;
-            this.labelBarra.Text = "Barra do Amor";
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // Form1
             // 
@@ -188,6 +214,7 @@ namespace Conselheiro_Amoroso
             this.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 599);
+            this.Controls.Add(this.labelBarraValue);
             this.Controls.Add(this.labelBarra);
             this.Controls.Add(this.labelVoltar);
             this.Controls.Add(this.progressBar1);
@@ -216,6 +243,8 @@ namespace Conselheiro_Amoroso
         private RedProgressBar progressBar1;
         private System.Windows.Forms.Label labelVoltar;
         private System.Windows.Forms.Label labelBarra;
+        private System.Windows.Forms.Timer timerUpdateBarra;
+        private System.Windows.Forms.Label labelBarraValue;
     }
 }
 

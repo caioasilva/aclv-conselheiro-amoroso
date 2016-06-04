@@ -24,8 +24,9 @@ namespace Conselheiro_Amoroso
         Node<int> atual = null;
         int chance = 50;
         int n_per = 1;
+        int step_barra;
 
-        //fonte gay
+        //fonte
         PrivateFontCollection pfc = new PrivateFontCollection();
 
         public Form1()
@@ -36,6 +37,7 @@ namespace Conselheiro_Amoroso
             labelNumero.Font = new System.Drawing.Font(pfc.Families[0], 18, System.Drawing.FontStyle.Bold);
             labelVoltar.Font = new System.Drawing.Font(pfc.Families[0], 14, System.Drawing.FontStyle.Regular);
             labelBarra.Font = new System.Drawing.Font(pfc.Families[0], 14, System.Drawing.FontStyle.Regular);
+            labelBarraValue.Font = new System.Drawing.Font(pfc.Families[0], 16, System.Drawing.FontStyle.Regular);
 
             perguntas[0].texto = "Voce é bonito?";
             perguntas[0].valor = 10;
@@ -66,34 +68,48 @@ namespace Conselheiro_Amoroso
             progressBar1.Value = chance;
         }
 
+        
+        void updateBarra(int val)
+        {
+            if (val < chance)
+            {
+                step_barra = -1;
+            }
+            else if (val > chance)
+            {
+                step_barra = 1;
+            }
+            chance = val;
+            timerUpdateBarra.Start();
+        }
+
         void updateForm()
         {
             if (atual != null)
             {
                 labelPergunta.Text = perguntas[atual.info].texto;
                 labelNumero.Text = "Pergunta " + n_per++.ToString();
-                progressBar1.Value = chance;
             }
             else
             {
                 labelPergunta.Text = "Sua chance é de "+chance.ToString()+"%";
-                progressBar1.Value = chance;
                 buttonSim.Enabled = false;
                 buttonNao.Enabled = false;
+                buttonNao.Visible = false;
+                buttonSim.Visible = false;
             }
         }
 
-
         private void buttonNao_Click(object sender, EventArgs e)
         {
-            chance += perguntas[atual.info].valor;
+            updateBarra(chance - perguntas[atual.info].valor);
             atual = atual.nao;
             updateForm();
         }
 
         private void buttonSim_Click(object sender, EventArgs e)
         {
-            chance += perguntas[atual.info].valor;
+            updateBarra(chance + perguntas[atual.info].valor);
             atual = atual.sim;
             updateForm();
         }
@@ -166,5 +182,22 @@ namespace Conselheiro_Amoroso
             Application.Exit();
         }
 
+        private void timerUpdateBarra_Tick(object sender, EventArgs e)
+        {
+            if ((step_barra > 0 && progressBar1.Value < chance) || (step_barra < 0 && progressBar1.Value > chance))
+            {
+                progressBar1.Value += step_barra;
+                labelBarraValue.Text = progressBar1.Value.ToString() + "%";
+            }
+            else {
+                timerUpdateBarra.Stop();
+            }
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+            
+
+        }
     }
 }

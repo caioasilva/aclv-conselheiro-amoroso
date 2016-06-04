@@ -17,7 +17,7 @@ namespace Conselheiro_Amoroso
 
         protected override void OnPaintBackground(PaintEventArgs pevent)
         {
-            // None... Helps control the flicker.
+            // Vazio
         }
 
         protected override void OnPaint(PaintEventArgs e)

@@ -31,6 +31,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <StartupObject>Conselheiro_Amoroso.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -66,7 +73,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="fonte.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,6 +87,42 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bt_nao.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bt_nao_down.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bt_nao_hover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bt_sim.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bt_sim_down.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bt_sim_hover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bt_sim1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_down.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back_hover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

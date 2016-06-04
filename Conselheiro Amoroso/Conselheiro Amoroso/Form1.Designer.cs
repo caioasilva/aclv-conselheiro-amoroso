@@ -1,4 +1,7 @@
-﻿namespace Conselheiro_Amoroso
+﻿using System.Drawing.Text;
+
+
+namespace Conselheiro_Amoroso
 {
     partial class Form1
     {
@@ -28,108 +31,176 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.buttonSim = new System.Windows.Forms.Button();
             this.buttonNao = new System.Windows.Forms.Button();
             this.labelNumero = new System.Windows.Forms.Label();
             this.buttonVoltar = new System.Windows.Forms.Button();
             this.labelPergunta = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.labelVoltar = new System.Windows.Forms.Label();
             this.progressBar1 = new Conselheiro_Amoroso.RedProgressBar();
-            this.groupBox1.SuspendLayout();
+            this.labelBarra = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonSim
             // 
             this.buttonSim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.buttonSim.Location = new System.Drawing.Point(12, 459);
+            this.buttonSim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSim.BackgroundImage")));
+            this.buttonSim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonSim.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSim.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonSim.FlatAppearance.BorderSize = 0;
+            this.buttonSim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonSim.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonSim.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSim.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonSim.Location = new System.Drawing.Point(108, 501);
+            this.buttonSim.Margin = new System.Windows.Forms.Padding(0);
             this.buttonSim.Name = "buttonSim";
-            this.buttonSim.Size = new System.Drawing.Size(172, 48);
-            this.buttonSim.TabIndex = 0;
-            this.buttonSim.Text = "Sim";
+            this.buttonSim.Size = new System.Drawing.Size(248, 88);
+            this.buttonSim.TabIndex = 9;
             this.buttonSim.UseVisualStyleBackColor = true;
             this.buttonSim.Click += new System.EventHandler(this.buttonSim_Click);
+            this.buttonSim.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonSim_MouseDown);
+            this.buttonSim.MouseLeave += new System.EventHandler(this.buttonSim_MouseLeave);
+            this.buttonSim.MouseHover += new System.EventHandler(this.buttonSim_MouseHover);
+            this.buttonSim.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonSim_MouseUp);
             // 
             // buttonNao
             // 
             this.buttonNao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonNao.Location = new System.Drawing.Point(600, 459);
+            this.buttonNao.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.bt_nao;
+            this.buttonNao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonNao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNao.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonNao.FlatAppearance.BorderSize = 0;
+            this.buttonNao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonNao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonNao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNao.ForeColor = System.Drawing.SystemColors.Window;
+            this.buttonNao.Location = new System.Drawing.Point(437, 501);
+            this.buttonNao.Margin = new System.Windows.Forms.Padding(0);
             this.buttonNao.Name = "buttonNao";
-            this.buttonNao.Size = new System.Drawing.Size(172, 48);
-            this.buttonNao.TabIndex = 1;
-            this.buttonNao.Text = "Não";
+            this.buttonNao.Size = new System.Drawing.Size(248, 88);
+            this.buttonNao.TabIndex = 8;
             this.buttonNao.UseVisualStyleBackColor = true;
             this.buttonNao.Click += new System.EventHandler(this.buttonNao_Click);
+            this.buttonNao.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonNao_MouseDown);
+            this.buttonNao.MouseLeave += new System.EventHandler(this.buttonNao_MouseLeave);
+            this.buttonNao.MouseHover += new System.EventHandler(this.buttonNao_MouseHover);
+            this.buttonNao.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonNao_MouseUp);
             // 
             // labelNumero
             // 
             this.labelNumero.AutoSize = true;
-            this.labelNumero.Location = new System.Drawing.Point(12, 63);
+            this.labelNumero.BackColor = System.Drawing.Color.Transparent;
+            this.labelNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNumero.Location = new System.Drawing.Point(36, 333);
+            this.labelNumero.MinimumSize = new System.Drawing.Size(150, 0);
             this.labelNumero.Name = "labelNumero";
-            this.labelNumero.Size = new System.Drawing.Size(62, 13);
+            this.labelNumero.Size = new System.Drawing.Size(150, 29);
             this.labelNumero.TabIndex = 2;
-            this.labelNumero.Text = "Pergunta 1:";
+            this.labelNumero.Text = "Pergunta X";
+            this.labelNumero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // buttonVoltar
             // 
-            this.buttonVoltar.Location = new System.Drawing.Point(13, 13);
+            this.buttonVoltar.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.back;
+            this.buttonVoltar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonVoltar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonVoltar.FlatAppearance.BorderSize = 0;
+            this.buttonVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonVoltar.Location = new System.Drawing.Point(9, 9);
+            this.buttonVoltar.Margin = new System.Windows.Forms.Padding(0);
             this.buttonVoltar.Name = "buttonVoltar";
-            this.buttonVoltar.Size = new System.Drawing.Size(75, 23);
+            this.buttonVoltar.Size = new System.Drawing.Size(56, 57);
             this.buttonVoltar.TabIndex = 4;
-            this.buttonVoltar.Text = "Voltar";
             this.buttonVoltar.UseVisualStyleBackColor = true;
+            this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
+            this.buttonVoltar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonVoltar_MouseDown);
+            this.buttonVoltar.MouseLeave += new System.EventHandler(this.buttonVoltar_MouseLeave);
+            this.buttonVoltar.MouseHover += new System.EventHandler(this.buttonVoltar_MouseHover);
+            this.buttonVoltar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonVoltar_MouseUp);
             // 
             // labelPergunta
             // 
             this.labelPergunta.AutoEllipsis = true;
             this.labelPergunta.AutoSize = true;
-            this.labelPergunta.Font = new System.Drawing.Font("Kaufmann BT", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPergunta.Location = new System.Drawing.Point(12, 76);
-            this.labelPergunta.MaximumSize = new System.Drawing.Size(350, 0);
+            this.labelPergunta.BackColor = System.Drawing.Color.Transparent;
+            this.labelPergunta.Font = new System.Drawing.Font("Microsoft Sans Serif", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPergunta.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.labelPergunta.Location = new System.Drawing.Point(54, 375);
+            this.labelPergunta.MaximumSize = new System.Drawing.Size(700, 0);
+            this.labelPergunta.MinimumSize = new System.Drawing.Size(690, 100);
             this.labelPergunta.Name = "labelPergunta";
-            this.labelPergunta.Size = new System.Drawing.Size(126, 42);
+            this.labelPergunta.Size = new System.Drawing.Size(690, 100);
             this.labelPergunta.TabIndex = 5;
-            this.labelPergunta.Text = "Pergunta";
+            this.labelPergunta.Text = "Texto da Pergunta ";
+            this.labelPergunta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // groupBox1
+            // labelVoltar
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.progressBar1);
-            this.groupBox1.Location = new System.Drawing.Point(6, 513);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(773, 45);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Barra do Amor";
+            this.labelVoltar.AutoSize = true;
+            this.labelVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelVoltar.ForeColor = System.Drawing.Color.DarkRed;
+            this.labelVoltar.Location = new System.Drawing.Point(12, 61);
+            this.labelVoltar.Name = "labelVoltar";
+            this.labelVoltar.Size = new System.Drawing.Size(49, 16);
+            this.labelVoltar.TabIndex = 10;
+            this.labelVoltar.Text = "Voltar";
+            this.labelVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelVoltar.Visible = false;
             // 
             // progressBar1
             // 
-            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.BackColor = System.Drawing.Color.Red;
             this.progressBar1.ForeColor = System.Drawing.Color.DarkRed;
-            this.progressBar1.Location = new System.Drawing.Point(6, 15);
+            this.progressBar1.Location = new System.Drawing.Point(93, 25);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(761, 23);
+            this.progressBar1.Size = new System.Drawing.Size(693, 42);
             this.progressBar1.Step = 1;
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 3;
             this.progressBar1.Value = 50;
             // 
+            // labelBarra
+            // 
+            this.labelBarra.AutoSize = true;
+            this.labelBarra.BackColor = System.Drawing.Color.Transparent;
+            this.labelBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBarra.Location = new System.Drawing.Point(374, 2);
+            this.labelBarra.Name = "labelBarra";
+            this.labelBarra.Size = new System.Drawing.Size(132, 24);
+            this.labelBarra.TabIndex = 11;
+            this.labelBarra.Text = "Barra do Amor";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.groupBox1);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.bg;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(800, 599);
+            this.Controls.Add(this.labelBarra);
+            this.Controls.Add(this.labelVoltar);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.labelNumero);
             this.Controls.Add(this.labelPergunta);
             this.Controls.Add(this.buttonVoltar);
-            this.Controls.Add(this.labelNumero);
             this.Controls.Add(this.buttonNao);
             this.Controls.Add(this.buttonSim);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximumSize = new System.Drawing.Size(816, 638);
+            this.MinimumSize = new System.Drawing.Size(816, 638);
             this.Name = "Form1";
             this.Text = "Conselheiro Amoroso";
-            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,8 +213,9 @@
         private System.Windows.Forms.Label labelNumero;
         private System.Windows.Forms.Button buttonVoltar;
         private System.Windows.Forms.Label labelPergunta;
-        private System.Windows.Forms.GroupBox groupBox1;
         private RedProgressBar progressBar1;
+        private System.Windows.Forms.Label labelVoltar;
+        private System.Windows.Forms.Label labelBarra;
     }
 }
 

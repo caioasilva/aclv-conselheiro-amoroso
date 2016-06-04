@@ -149,7 +149,7 @@ namespace Conselheiro_Amoroso
             this.labelVoltar.AutoSize = true;
             this.labelVoltar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelVoltar.ForeColor = System.Drawing.Color.DarkRed;
-            this.labelVoltar.Location = new System.Drawing.Point(12, 61);
+            this.labelVoltar.Location = new System.Drawing.Point(12, 63);
             this.labelVoltar.Name = "labelVoltar";
             this.labelVoltar.Size = new System.Drawing.Size(49, 16);
             this.labelVoltar.TabIndex = 10;
@@ -224,9 +224,11 @@ namespace Conselheiro_Amoroso
             this.Controls.Add(this.buttonNao);
             this.Controls.Add(this.buttonSim);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(816, 638);
             this.MinimumSize = new System.Drawing.Size(816, 638);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Conselheiro Amoroso";
             this.ResumeLayout(false);
             this.PerformLayout();

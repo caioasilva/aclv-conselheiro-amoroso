@@ -7,7 +7,7 @@ using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using WMPLib;
 
 namespace Conselheiro_Amoroso
 {
@@ -28,6 +28,9 @@ namespace Conselheiro_Amoroso
 
         //fonte
         PrivateFontCollection pfc = new PrivateFontCollection();
+        WMPLib.WindowsMediaPlayer music_player = new WMPLib.WindowsMediaPlayer();
+        WMPLib.WindowsMediaPlayer effect_player = new WMPLib.WindowsMediaPlayer();
+        
 
         public Form1()
         {
@@ -38,6 +41,8 @@ namespace Conselheiro_Amoroso
             labelVoltar.Font = new System.Drawing.Font(pfc.Families[0], 14, System.Drawing.FontStyle.Regular);
             labelBarra.Font = new System.Drawing.Font(pfc.Families[0], 14, System.Drawing.FontStyle.Regular);
             labelBarraValue.Font = new System.Drawing.Font(pfc.Families[0], 16, System.Drawing.FontStyle.Regular);
+            music_player.URL = "main_music.mp3";
+            music_player.settings.setMode("Loop", true);
 
             perguntas[0].texto = "Voce é bonito?";
             perguntas[0].valor = 10;
@@ -66,6 +71,9 @@ namespace Conselheiro_Amoroso
             labelPergunta.Text = perguntas[atual.info].texto;
             labelNumero.Text = "Pergunta " + n_per++.ToString();
             progressBar1.Value = chance;
+
+
+            music_player.controls.play();
         }
 
         
@@ -179,7 +187,8 @@ namespace Conselheiro_Amoroso
 
         private void buttonVoltar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.DialogResult = DialogResult.OK;
+            this.Close();
         }
 
         private void timerUpdateBarra_Tick(object sender, EventArgs e)

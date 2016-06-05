@@ -43,6 +43,8 @@ namespace Conselheiro_Amoroso
             this.timerUpdateBarra = new System.Windows.Forms.Timer(this.components);
             this.labelBarraValue = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.panel1 = new Conselheiro_Amoroso.DoubleBufferPanel();
+            this.timerOculos = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new Conselheiro_Amoroso.RedProgressBar();
             this.SuspendLayout();
             // 
@@ -166,7 +168,7 @@ namespace Conselheiro_Amoroso
             this.labelBarra.BackColor = System.Drawing.Color.Transparent;
             this.labelBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBarra.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelBarra.Location = new System.Drawing.Point(374, 3);
+            this.labelBarra.Location = new System.Drawing.Point(382, 3);
             this.labelBarra.Name = "labelBarra";
             this.labelBarra.Size = new System.Drawing.Size(132, 24);
             this.labelBarra.TabIndex = 11;
@@ -174,7 +176,7 @@ namespace Conselheiro_Amoroso
             // 
             // timerUpdateBarra
             // 
-            this.timerUpdateBarra.Interval = 8;
+            this.timerUpdateBarra.Interval = 20;
             this.timerUpdateBarra.Tick += new System.EventHandler(this.timerUpdateBarra_Tick);
             // 
             // labelBarraValue
@@ -197,6 +199,22 @@ namespace Conselheiro_Amoroso
             // 
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel1.Location = new System.Drawing.Point(404, 112);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(52, 29);
+            this.panel1.TabIndex = 13;
+            this.panel1.Click += new System.EventHandler(this.panel1_Click);
+            // 
+            // timerOculos
+            // 
+            this.timerOculos.Interval = 30;
+            this.timerOculos.Tick += new System.EventHandler(this.timerOculos_Tick);
             // 
             // progressBar1
             // 
@@ -221,6 +239,7 @@ namespace Conselheiro_Amoroso
             this.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 599);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelBarraValue);
             this.Controls.Add(this.labelBarra);
             this.Controls.Add(this.labelVoltar);
@@ -230,6 +249,7 @@ namespace Conselheiro_Amoroso
             this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.buttonNao);
             this.Controls.Add(this.buttonSim);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(816, 638);
@@ -256,6 +276,8 @@ namespace Conselheiro_Amoroso
         private System.Windows.Forms.Timer timerUpdateBarra;
         private System.Windows.Forms.Label labelBarraValue;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Timer timerOculos;
     }
 }
 

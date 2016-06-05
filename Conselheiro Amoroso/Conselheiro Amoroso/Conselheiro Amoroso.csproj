@@ -72,6 +72,9 @@
     <Compile Include="Ajuda.Designer.cs">
       <DependentUpon>Ajuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoubleBufferedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +101,7 @@
     <Compile Include="Sobre.Designer.cs">
       <DependentUpon>Sobre.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\oculos2.png" />
     <Content Include="Resources\tdfw.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -22,10 +22,9 @@ namespace Conselheiro_Amoroso
 
         //fonte
         PrivateFontCollection pfc = new PrivateFontCollection();
-        WMPLib.WindowsMediaPlayer effect_player = new WMPLib.WindowsMediaPlayer();
-        WMPLib.WindowsMediaPlayer music_player = new WMPLib.WindowsMediaPlayer();
 
-        public Form1()
+        WindowsMediaPlayer effect_g_player;
+        public Form1(WMPLib.WindowsMediaPlayer player)
         {
             InitializeComponent();
             pfc.AddFontFile("Resources/fonte.ttf");
@@ -34,12 +33,12 @@ namespace Conselheiro_Amoroso
             labelVoltar.Font = new System.Drawing.Font(pfc.Families[0], 14, System.Drawing.FontStyle.Regular);
             labelBarra.Font = new System.Drawing.Font(pfc.Families[0], 14, System.Drawing.FontStyle.Regular);
             labelBarraValue.Font = new System.Drawing.Font(pfc.Families[0], 16, System.Drawing.FontStyle.Regular);
-
+            this.effect_g_player = player;
             backgroundWorker1.RunWorkerAsync();
+
            
         }
 
-        
         void updateBarra(int val)
         {
             if (val < chance)
@@ -64,6 +63,7 @@ namespace Conselheiro_Amoroso
             {
                 if(chance==0)
                 {
+                    oculosCair();
                     perguntas[23].valor_n = 0;
                     perguntas[23].valor_s = 30;
                     perguntas[23].texto = "Você tem certeza que deseja continuar?";
@@ -82,13 +82,13 @@ namespace Conselheiro_Amoroso
                 labelPergunta.Text = "Sua chance é de "+chance.ToString()+"%";
                 if(chance>50)
                 {
-                    effect_player.URL = "Resources/applause.mp3";
-                    effect_player.controls.play();
+                    effect_g_player.URL = "Resources/applause.mp3";
+                    effect_g_player.controls.play();
                 }
                 else
                 {
-                    effect_player.URL = "Resources/boo.mp3";
-                    effect_player.controls.play();
+                    effect_g_player.URL = "Resources/boo.mp3";
+                    effect_g_player.controls.play();
                 }
                 labelVoltar.Visible = true;
                 buttonSim.Enabled = false;
@@ -100,7 +100,7 @@ namespace Conselheiro_Amoroso
 
         private void buttonNao_Click(object sender, EventArgs e)
         {
-            effect_player.controls.play();
+            effect_g_player.controls.play();
             updateBarra(chance + perguntas[atual.info].valor_n);
             atual = atual.nao;
             updateForm();
@@ -108,7 +108,7 @@ namespace Conselheiro_Amoroso
 
         private void buttonSim_Click(object sender, EventArgs e)
         {
-            effect_player.controls.play();
+            effect_g_player.controls.play();
             updateBarra(chance + perguntas[atual.info].valor_s);
             atual = atual.sim;
             updateForm();
@@ -179,8 +179,8 @@ namespace Conselheiro_Amoroso
 
         private void buttonVoltar_Click(object sender, EventArgs e)
         {
-            effect_player.URL = "Resources/click.mp3";
-            effect_player.controls.play();
+            effect_g_player.URL = "Resources/click.mp3";
+            effect_g_player.controls.play();
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -278,16 +278,10 @@ namespace Conselheiro_Amoroso
 
             Arvore arv = new Arvore();
             atual = arv.raiz();
-            effect_player.settings.autoStart = false;
-            effect_player.URL = "Resources/click.mp3";
-            music_player.URL = "Resources/main_music.mp3";
-            music_player.settings.setMode("Loop", true);
-
         }
 
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            music_player.controls.play();
             labelPergunta.Text = perguntas[atual.info].texto;
             labelNumero.Text = "Pergunta " + n_per++.ToString();
             updateBarra(50);
@@ -299,8 +293,28 @@ namespace Conselheiro_Amoroso
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
-            music_player.close();
-            effect_player.close();
+        }
+
+        private void panel1_Click(object sender, EventArgs e)
+        {
+            oculosCair();
+        }
+
+        void oculosCair()
+        {
+            panel1.Location = new Point(panel1.Location.X, 70);
+            panel1.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.oculos2;
+            timerOculos.Start();
+        }
+
+        private void timerOculos_Tick(object sender, EventArgs e)
+        {
+            if (panel1.Location.Y < 112)
+            {
+                panel1.Location = new Point(panel1.Location.X, panel1.Location.Y + 2);
+            }
+            else
+                timerOculos.Stop();
         }
     }
 }

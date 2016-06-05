@@ -12,18 +12,32 @@ namespace Conselheiro_Amoroso
 {
     public partial class Menu : Form
     {
-        WMPLib.WindowsMediaPlayer effect_player = new WMPLib.WindowsMediaPlayer();
+        public WMPLib.WindowsMediaPlayer music_player = new WMPLib.WindowsMediaPlayer();
+        public WMPLib.WindowsMediaPlayer effect_player = new WMPLib.WindowsMediaPlayer();
         public Menu()
         {
             InitializeComponent();
             effect_player.settings.autoStart = true;
-            
+            music_player.settings.autoStart = false;
+            music_player.URL = "Resources/main_music.mp3";
+            music_player.settings.setMode("loop", true);
+            EnableDoubleBuffering();
+
         }
 
+        public void EnableDoubleBuffering()
+        {
+            this.SetStyle(ControlStyles.DoubleBuffer |
+               ControlStyles.UserPaint |
+               ControlStyles.AllPaintingInWmPaint,
+               true);
+            this.UpdateStyles();
+        }
         private void buttonMain_Click(object sender, EventArgs e)
         {
             effect_player.URL = "Resources/click.mp3";
-            Form jogo = new Form1();
+            music_player.controls.play();
+            Form jogo = new Form1(effect_player);
             jogo.StartPosition = FormStartPosition.Manual;
             jogo.Location = new Point(this.Location.X, this.Location.Y);
             this.Visible = false;
@@ -32,6 +46,8 @@ namespace Conselheiro_Amoroso
             {
                 this.Location = new Point(jogo.Location.X, jogo.Location.Y);
                 this.Visible = true;
+                music_player.controls.stop();
+                jogo.Dispose();
             }
             else
                 Application.Exit();
@@ -54,9 +70,10 @@ namespace Conselheiro_Amoroso
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (panel1.Location.Y < 255)
+            if (panel1.Location.Y < 254)
             {
                 panel1.Location = new Point(panel1.Location.X, panel1.Location.Y + 2);
+                panel1.Visible = true;
             }
             else
                 timer1.Stop();
@@ -64,9 +81,11 @@ namespace Conselheiro_Amoroso
 
         private void panel1_Click(object sender, EventArgs e)
         {
+            panel1.Visible = false;
             panel1.Location = new Point(panel1.Location.X, 127);
             timer1.Start();
             effect_player.URL = "Resources/tdfw.mp3";
         }
+
     }
 }

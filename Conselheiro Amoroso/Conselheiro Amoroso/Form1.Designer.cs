@@ -42,6 +42,7 @@ namespace Conselheiro_Amoroso
             this.labelBarra = new System.Windows.Forms.Label();
             this.timerUpdateBarra = new System.Windows.Forms.Timer(this.components);
             this.labelBarraValue = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.progressBar1 = new Conselheiro_Amoroso.RedProgressBar();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@ namespace Conselheiro_Amoroso
             this.buttonSim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("buttonSim.BackgroundImage")));
             this.buttonSim.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonSim.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSim.Enabled = false;
             this.buttonSim.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonSim.FlatAppearance.BorderSize = 0;
             this.buttonSim.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -75,6 +77,7 @@ namespace Conselheiro_Amoroso
             this.buttonNao.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.bt_nao;
             this.buttonNao.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.buttonNao.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonNao.Enabled = false;
             this.buttonNao.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.buttonNao.FlatAppearance.BorderSize = 0;
             this.buttonNao.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
@@ -103,7 +106,7 @@ namespace Conselheiro_Amoroso
             this.labelNumero.Name = "labelNumero";
             this.labelNumero.Size = new System.Drawing.Size(150, 29);
             this.labelNumero.TabIndex = 2;
-            this.labelNumero.Text = "Pergunta X";
+            this.labelNumero.Text = "Pergunta";
             this.labelNumero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // buttonVoltar
@@ -141,7 +144,7 @@ namespace Conselheiro_Amoroso
             this.labelPergunta.Name = "labelPergunta";
             this.labelPergunta.Size = new System.Drawing.Size(690, 100);
             this.labelPergunta.TabIndex = 5;
-            this.labelPergunta.Text = "Texto da Pergunta ";
+            this.labelPergunta.Text = "Carregando...";
             this.labelPergunta.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelVoltar
@@ -190,6 +193,11 @@ namespace Conselheiro_Amoroso
             this.labelBarraValue.Text = "50%";
             this.labelBarraValue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
+            // 
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -203,7 +211,6 @@ namespace Conselheiro_Amoroso
             this.progressBar1.Step = 1;
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 3;
-            this.progressBar1.Value = 50;
             this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // Form1
@@ -223,6 +230,7 @@ namespace Conselheiro_Amoroso
             this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.buttonNao);
             this.Controls.Add(this.buttonSim);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(816, 638);
@@ -230,6 +238,7 @@ namespace Conselheiro_Amoroso
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Conselheiro Amoroso";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,6 +256,7 @@ namespace Conselheiro_Amoroso
         private System.Windows.Forms.Label labelBarra;
         private System.Windows.Forms.Timer timerUpdateBarra;
         private System.Windows.Forms.Label labelBarraValue;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
 

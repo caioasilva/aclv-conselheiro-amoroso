@@ -11,69 +11,32 @@ using WMPLib;
 
 namespace Conselheiro_Amoroso
 {
-    public struct Pergunta
-    {
-        public string texto;
-        public int valor;
-    }
-
     public partial class Form1 : Form
     {
-        Pergunta[] perguntas = new Pergunta[100];
+        Pergunta[] perguntas = new Pergunta[24];
 
         Node<int> atual = null;
-        int chance = 50;
+        int chance = 0;
         int n_per = 1;
         int step_barra;
 
         //fonte
         PrivateFontCollection pfc = new PrivateFontCollection();
-        WMPLib.WindowsMediaPlayer music_player = new WMPLib.WindowsMediaPlayer();
         WMPLib.WindowsMediaPlayer effect_player = new WMPLib.WindowsMediaPlayer();
-        
+        WMPLib.WindowsMediaPlayer music_player = new WMPLib.WindowsMediaPlayer();
 
         public Form1()
         {
             InitializeComponent();
-            pfc.AddFontFile("fonte.ttf");
-            labelPergunta.Font = new System.Drawing.Font(pfc.Families[0], 30, System.Drawing.FontStyle.Regular);
+            pfc.AddFontFile("Resources/fonte.ttf");
+            labelPergunta.Font = new System.Drawing.Font(pfc.Families[0], 36, System.Drawing.FontStyle.Regular);
             labelNumero.Font = new System.Drawing.Font(pfc.Families[0], 18, System.Drawing.FontStyle.Bold);
             labelVoltar.Font = new System.Drawing.Font(pfc.Families[0], 14, System.Drawing.FontStyle.Regular);
             labelBarra.Font = new System.Drawing.Font(pfc.Families[0], 14, System.Drawing.FontStyle.Regular);
             labelBarraValue.Font = new System.Drawing.Font(pfc.Families[0], 16, System.Drawing.FontStyle.Regular);
-            music_player.URL = "main_music.mp3";
-            music_player.settings.setMode("Loop", true);
 
-            perguntas[0].texto = "Voce é bonito?";
-            perguntas[0].valor = 10;
-            perguntas[1].texto = "Ela é bonita?";
-            perguntas[1].valor = -15;
-            perguntas[2].texto = "Você faz computação?";
-            perguntas[2].valor = -10;
-            perguntas[3].texto = "Ela faz computação também?";
-            perguntas[3].valor = 20;
-            perguntas[4].texto = "Vocês se conhecem?";
-            perguntas[4].valor = 5;
-
-            atual = new Node<int>(2);
-                atual.sim = new Node<int>(3);
-                    atual.sim.sim = new Node<int>(0);
-                        atual.sim.sim.sim = new Node<int>(4);
-                        atual.sim.sim.nao = new Node<int>(1);
-                    atual.sim.nao = new Node<int>(0);
-                        atual.sim.nao.sim = new Node<int>(1);
-                        atual.sim.nao.nao = new Node<int>(1);
-                atual.nao = new Node<int>(0);
-                    atual.nao.sim = new Node<int>(1);
-                    atual.nao.nao = new Node<int>(1);
-
-
-            labelPergunta.Text = perguntas[atual.info].texto;
-            labelNumero.Text = "Pergunta " + n_per++.ToString();
-            progressBar1.Value = chance;
-
-
-            music_player.controls.play();
+            backgroundWorker1.RunWorkerAsync();
+           
         }
 
         
@@ -81,10 +44,14 @@ namespace Conselheiro_Amoroso
         {
             if (val < chance)
             {
+                if (val < 0)
+                    val = 0;
                 step_barra = -1;
             }
             else if (val > chance)
             {
+                if (val > 100)
+                    val = 100;
                 step_barra = 1;
             }
             chance = val;
@@ -95,12 +62,35 @@ namespace Conselheiro_Amoroso
         {
             if (atual != null)
             {
-                labelPergunta.Text = perguntas[atual.info].texto;
-                labelNumero.Text = "Pergunta " + n_per++.ToString();
+                if(chance==0)
+                {
+                    perguntas[23].valor_n = 0;
+                    perguntas[23].valor_s = 30;
+                    perguntas[23].texto = "Você tem certeza que deseja continuar?";
+                    Node<int> sefudeu = new Node<int>(23);
+                    sefudeu.nao = null;
+                    sefudeu.sim = atual;
+                    atual = sefudeu;
+                }
+                    labelPergunta.Text = perguntas[atual.info].texto;
+                    labelNumero.Text = "Pergunta " + n_per++.ToString();
+               
             }
             else
             {
+                labelPergunta.Font = new System.Drawing.Font(pfc.Families[0], 48, System.Drawing.FontStyle.Regular);
                 labelPergunta.Text = "Sua chance é de "+chance.ToString()+"%";
+                if(chance>50)
+                {
+                    effect_player.URL = "Resources/applause.mp3";
+                    effect_player.controls.play();
+                }
+                else
+                {
+                    effect_player.URL = "Resources/boo.mp3";
+                    effect_player.controls.play();
+                }
+                labelVoltar.Visible = true;
                 buttonSim.Enabled = false;
                 buttonNao.Enabled = false;
                 buttonNao.Visible = false;
@@ -110,14 +100,16 @@ namespace Conselheiro_Amoroso
 
         private void buttonNao_Click(object sender, EventArgs e)
         {
-            updateBarra(chance - perguntas[atual.info].valor);
+            effect_player.controls.play();
+            updateBarra(chance + perguntas[atual.info].valor_n);
             atual = atual.nao;
             updateForm();
         }
 
         private void buttonSim_Click(object sender, EventArgs e)
         {
-            updateBarra(chance + perguntas[atual.info].valor);
+            effect_player.controls.play();
+            updateBarra(chance + perguntas[atual.info].valor_s);
             atual = atual.sim;
             updateForm();
         }
@@ -187,6 +179,8 @@ namespace Conselheiro_Amoroso
 
         private void buttonVoltar_Click(object sender, EventArgs e)
         {
+            effect_player.URL = "Resources/click.mp3";
+            effect_player.controls.play();
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
@@ -207,6 +201,106 @@ namespace Conselheiro_Amoroso
         {
             
 
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
+            perguntas[0].texto = "Você é bonito(a)?";
+            perguntas[0].valor_s = 10;
+            perguntas[0].valor_n = -20;
+            perguntas[1].texto = "Ela é bonita(o)?";
+            perguntas[1].valor_s = -10;
+            perguntas[1].valor_n = 10;
+            perguntas[2].texto = "Você faz computação?";
+            perguntas[2].valor_s = -10;
+            perguntas[2].valor_n = 10;
+            perguntas[3].texto = "Você faz o mesmo curso que ela/ele?";
+            perguntas[3].valor_s = 20;
+            perguntas[3].valor_n = -5;
+            perguntas[4].texto = "Vocês se conhecem?";
+            perguntas[4].valor_s = 5;
+            perguntas[4].valor_n = -5;
+            perguntas[5].texto = "Ela/ele tem namorado(a)?";
+            perguntas[5].valor_s = -40;
+            perguntas[5].valor_n = 5;
+            perguntas[6].texto = "Você é muito amigo(a) dessa pessoa?";
+            perguntas[6].valor_s = 10;
+            perguntas[6].valor_n = 0;
+            perguntas[7].texto = "Você acha que está na 'friendzone'?";
+            perguntas[7].valor_s = -50;
+            perguntas[7].valor_n = 10;
+            perguntas[8].texto = "Vocês já se beijaram alguma vez?";
+            perguntas[8].valor_s = 20;
+            perguntas[8].valor_n = 0;
+            perguntas[9].texto = "Você tem vergonha de ir falar com essa pessoa?";
+            perguntas[9].valor_s = -20;
+            perguntas[9].valor_s = 15;
+            perguntas[10].texto = "Por acaso ela/ele é sua/seu ex?";
+            perguntas[10].valor_s = 0;
+            perguntas[10].valor_n = 0;
+            perguntas[11].texto = "Ela/Ele te odeia?";
+            perguntas[11].valor_s = -100;
+            perguntas[11].valor_n = 10;
+            perguntas[12].texto = "Vocês têm interesses em comum?";
+            perguntas[12].valor_s = 20;
+            perguntas[12].valor_n = -20;
+            perguntas[13].texto = "Ela/Ela gosta de outra pessoa?";
+            perguntas[13].valor_s = -20;
+            perguntas[13].valor_n = 10;
+            perguntas[14].texto = "Ela/Ele já te disse que não quer ficar com você?";
+            perguntas[14].valor_s = -50;
+            perguntas[14].valor_n = 10;
+            perguntas[15].texto = "Vocês moram em cidades diferentes?";
+            perguntas[15].valor_s = -30;
+            perguntas[15].valor_n = 5;
+            perguntas[16].texto = "Vocês moram em estados diferentes?";
+            perguntas[16].valor_s = -30;
+            perguntas[16].valor_n = 5;
+            perguntas[17].texto = "Ela/Ele te despreza?";
+            perguntas[17].valor_s = -50;
+            perguntas[17].valor_n = 10;
+            perguntas[18].texto = "A família dessa pessoa gosta de você?";
+            perguntas[18].valor_s = 20;
+            perguntas[18].valor_n = -10;
+            perguntas[19].texto = "As amigas dessa pessoa gostam de você?";
+            perguntas[19].valor_s = 20;
+            perguntas[19].valor_n = -10;
+            perguntas[20].texto = "Alguma amiga(o) dessa pessoa quer ficar com você?";
+            perguntas[20].valor_s = -40;
+            perguntas[20].valor_n = 0;
+            perguntas[21].texto = "Você vê essa pessoa frequentemente?";
+            perguntas[21].valor_s = 15;
+            perguntas[21].valor_n = -20;
+            perguntas[22].texto = "Vocês continuaram conversando depois disso?";
+            perguntas[22].valor_s = 30;
+            perguntas[22].valor_n = -20;
+
+            Arvore arv = new Arvore();
+            atual = arv.raiz();
+            effect_player.settings.autoStart = false;
+            effect_player.URL = "Resources/click.mp3";
+            music_player.URL = "Resources/main_music.mp3";
+            music_player.settings.setMode("Loop", true);
+
+        }
+
+        private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            music_player.controls.play();
+            labelPergunta.Text = perguntas[atual.info].texto;
+            labelNumero.Text = "Pergunta " + n_per++.ToString();
+            updateBarra(50);
+            
+            buttonSim.Enabled = true;
+            buttonNao.Enabled = true;
+            
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            music_player.close();
+            effect_player.close();
         }
     }
 }

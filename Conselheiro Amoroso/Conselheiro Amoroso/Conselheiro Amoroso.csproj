@@ -98,6 +98,9 @@
     <Compile Include="Sobre.Designer.cs">
       <DependentUpon>Sobre.cs</DependentUpon>
     </Compile>
+    <Content Include="Resources\tdfw.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="Resources\oculos.png" />
     <EmbeddedResource Include="Ajuda.resx">
       <DependentUpon>Ajuda.cs</DependentUpon>

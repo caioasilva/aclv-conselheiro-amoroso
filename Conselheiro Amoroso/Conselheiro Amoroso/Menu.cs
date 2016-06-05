@@ -16,14 +16,13 @@ namespace Conselheiro_Amoroso
         public Menu()
         {
             InitializeComponent();
-            effect_player.settings.autoStart = false;
-            effect_player.URL = "Resources/click.mp3";
+            effect_player.settings.autoStart = true;
             
         }
 
         private void buttonMain_Click(object sender, EventArgs e)
         {
-            effect_player.controls.play();
+            effect_player.URL = "Resources/click.mp3";
             Form jogo = new Form1();
             jogo.StartPosition = FormStartPosition.Manual;
             jogo.Location = new Point(this.Location.X, this.Location.Y);
@@ -41,14 +40,14 @@ namespace Conselheiro_Amoroso
 
         private void buttonAjuda_Click(object sender, EventArgs e)
         {
-            effect_player.controls.play();
+            effect_player.URL = "Resources/click.mp3";
             Form ajuda = new Ajuda();
             ajuda.ShowDialog();
         }
 
         private void buttonSobre_Click(object sender, EventArgs e)
         {
-            effect_player.controls.play();
+            effect_player.URL = "Resources/click.mp3";
             Form sobre = new Sobre();
             sobre.ShowDialog();
         }
@@ -67,6 +66,7 @@ namespace Conselheiro_Amoroso
         {
             panel1.Location = new Point(panel1.Location.X, 127);
             timer1.Start();
+            effect_player.URL = "Resources/tdfw.mp3";
         }
     }
 }

@@ -95,7 +95,6 @@
             this.Controls.Add(this.buttonSobre);
             this.Controls.Add(this.buttonAjuda);
             this.Controls.Add(this.buttonMain);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(816, 638);

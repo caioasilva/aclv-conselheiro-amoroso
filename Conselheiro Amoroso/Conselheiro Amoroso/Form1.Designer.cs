@@ -230,7 +230,6 @@ namespace Conselheiro_Amoroso
             this.Controls.Add(this.buttonVoltar);
             this.Controls.Add(this.buttonNao);
             this.Controls.Add(this.buttonSim);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(816, 638);

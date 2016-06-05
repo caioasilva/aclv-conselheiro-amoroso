@@ -85,9 +85,6 @@
     <Compile Include="Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Node.cs" />
     <Compile Include="Pergunta.cs" />
     <Compile Include="Program.cs" />

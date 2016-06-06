@@ -87,5 +87,10 @@ namespace Conselheiro_Amoroso
             effect_player.URL = "Resources/tdfw.mp3";
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form a = new DoubleBufferedButton();
+            a.ShowDialog();
+        }
     }
 }

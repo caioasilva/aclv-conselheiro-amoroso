@@ -17,8 +17,9 @@ namespace Conselheiro_Amoroso
 
         Node<int> atual = null;
         int chance = 0;
-        int n_per = 1;
+        int n_per = 0;
         int step_barra;
+        bool[] respPergunta = Enumerable.Repeat(false, 24).ToArray();
 
         //fonte
         PrivateFontCollection pfc = new PrivateFontCollection();
@@ -31,8 +32,9 @@ namespace Conselheiro_Amoroso
             labelPergunta.Font = new System.Drawing.Font(pfc.Families[0], 36, System.Drawing.FontStyle.Regular);
             labelNumero.Font = new System.Drawing.Font(pfc.Families[0], 18, System.Drawing.FontStyle.Bold);
             labelVoltar.Font = new System.Drawing.Font(pfc.Families[0], 14, System.Drawing.FontStyle.Regular);
-            labelBarra.Font = new System.Drawing.Font(pfc.Families[0], 14, System.Drawing.FontStyle.Regular);
+            labelBarra.Font = new System.Drawing.Font(pfc.Families[0], 16, System.Drawing.FontStyle.Regular);
             labelBarraValue.Font = new System.Drawing.Font(pfc.Families[0], 16, System.Drawing.FontStyle.Regular);
+            labelDica.Font = new System.Drawing.Font(pfc.Families[0], 28, System.Drawing.FontStyle.Regular);
             this.effect_g_player = player;
             backgroundWorker1.RunWorkerAsync();
 
@@ -64,20 +66,22 @@ namespace Conselheiro_Amoroso
                 if(chance==0)
                 {
                     oculosCair();
-                    perguntas[23].valor_n = 0;
-                    perguntas[23].valor_s = 30;
-                    perguntas[23].texto = "Você tem certeza que deseja continuar?";
                     Node<int> sefudeu = new Node<int>(23);
                     sefudeu.nao = null;
                     sefudeu.sim = atual;
                     atual = sefudeu;
                 }
                     labelPergunta.Text = perguntas[atual.info].texto;
-                    labelNumero.Text = "Pergunta " + n_per++.ToString();
+                    labelNumero.Text = "Pergunta " + (++n_per).ToString();
                
             }
             else
             {
+                this.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.bg2;
+                labelDica.Visible = true;
+                labelNumero.Visible = false;
+                panel1.Visible = false;
+                labelPergunta.Location = new Point(158, 440);
                 labelPergunta.Font = new System.Drawing.Font(pfc.Families[0], 48, System.Drawing.FontStyle.Regular);
                 labelPergunta.Text = "Sua chance é de "+chance.ToString()+"%";
                 if(chance>50)
@@ -90,6 +94,43 @@ namespace Conselheiro_Amoroso
                     effect_g_player.URL = "Resources/boo.mp3";
                     effect_g_player.controls.play();
                 }
+                if (chance < 20)
+                {
+                    labelDica.Text = "Com essa probabilidade, te aconselho a desistir irmão(a)! #paz";
+                }
+                else if (chance >= 20 && chance < 40 && respPergunta[0] == false)
+                {
+                    labelDica.Text = "Não está longe, mas precisa melhorar esse visual aí. Faz uma plástica e compra umas roupas legais";
+                }
+                else if (chance >= 20 && chance < 40 && respPergunta[0] == true)
+                {
+                    labelDica.Text = "É... acho que não vai dar";
+                }
+                else if (chance >= 40 && chance < 60 && respPergunta[9] == true)
+                {
+                    labelDica.Text = "Toma umas e parte pro ataque!!";
+                }
+                else if (chance >= 40 && chance < 60 && respPergunta[9] == false)
+                {
+                    labelDica.Text = "Vai com calma e busca interesses em comum. \n\"Liber inops servo divite felicior\"";
+                }
+                else if (chance >= 60 && chance < 80 && respPergunta[14] == true)
+                {
+                    labelDica.Text = "Ela(e) só tá se fazendo de difícil. \n\"Água mole e pedra dura, tanto bate até que fura\"";
+                }
+                else if (chance >= 60 && chance < 80 && respPergunta[14] == false)
+                {
+                    labelDica.Text = "Vai pra cima, Sic et simpliciter";
+                }
+                else if (chance >= 80 && respPergunta[8] == true)
+                {
+                    labelDica.Text = "Quem faz uma vez, faz duas e três. \n\"Semel artiex, millies artifex esse potest\"";
+                }
+                else
+                {
+                    labelDica.Text = "Você tá com a faca e o queijo na mão. \nSó vai, filhão!";
+                }
+
                 labelVoltar.Visible = true;
                 buttonSim.Enabled = false;
                 buttonNao.Enabled = false;
@@ -100,6 +141,7 @@ namespace Conselheiro_Amoroso
 
         private void buttonNao_Click(object sender, EventArgs e)
         {
+            respPergunta[atual.info] = false;
             effect_g_player.controls.play();
             updateBarra(chance + perguntas[atual.info].valor_n);
             atual = atual.nao;
@@ -108,6 +150,7 @@ namespace Conselheiro_Amoroso
 
         private void buttonSim_Click(object sender, EventArgs e)
         {
+            respPergunta[atual.info] = true;
             effect_g_player.controls.play();
             updateBarra(chance + perguntas[atual.info].valor_s);
             atual = atual.sim;
@@ -275,6 +318,9 @@ namespace Conselheiro_Amoroso
             perguntas[22].texto = "Vocês continuaram conversando depois disso?";
             perguntas[22].valor_s = 30;
             perguntas[22].valor_n = -20;
+            perguntas[23].valor_n = 0;
+            perguntas[23].valor_s = 30;
+            perguntas[23].texto = "Você tem certeza que deseja continuar?";
 
             Arvore arv = new Arvore();
             atual = arv.raiz();
@@ -283,7 +329,6 @@ namespace Conselheiro_Amoroso
         private void backgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             labelPergunta.Text = perguntas[atual.info].texto;
-            labelNumero.Text = "Pergunta " + n_per++.ToString();
             updateBarra(50);
             
             buttonSim.Enabled = true;

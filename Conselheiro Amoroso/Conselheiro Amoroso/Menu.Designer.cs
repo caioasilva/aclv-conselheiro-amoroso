@@ -35,6 +35,7 @@
             this.buttonSobre = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new Conselheiro_Amoroso.DoubleBufferPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonMain
@@ -86,6 +87,21 @@
             this.panel1.TabIndex = 4;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Help;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(635, 472);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(48, 47);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Menu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -93,6 +109,7 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.menu;
             this.ClientSize = new System.Drawing.Size(800, 599);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonSobre);
             this.Controls.Add(this.buttonAjuda);
@@ -116,5 +133,6 @@
         private System.Windows.Forms.Button buttonSobre;
         private System.Windows.Forms.Timer timer1;
         private DoubleBufferPanel panel1;
+        private System.Windows.Forms.Button button1;
     }
 }

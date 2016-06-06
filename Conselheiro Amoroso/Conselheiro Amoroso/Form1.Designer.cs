@@ -43,8 +43,9 @@ namespace Conselheiro_Amoroso
             this.timerUpdateBarra = new System.Windows.Forms.Timer(this.components);
             this.labelBarraValue = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.panel1 = new Conselheiro_Amoroso.DoubleBufferPanel();
             this.timerOculos = new System.Windows.Forms.Timer(this.components);
+            this.labelDica = new System.Windows.Forms.Label();
+            this.panel1 = new Conselheiro_Amoroso.DoubleBufferPanel();
             this.progressBar1 = new Conselheiro_Amoroso.RedProgressBar();
             this.SuspendLayout();
             // 
@@ -108,7 +109,7 @@ namespace Conselheiro_Amoroso
             this.labelNumero.Name = "labelNumero";
             this.labelNumero.Size = new System.Drawing.Size(150, 29);
             this.labelNumero.TabIndex = 2;
-            this.labelNumero.Text = "Pergunta";
+            this.labelNumero.Text = "Pergunta 1";
             this.labelNumero.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // buttonVoltar
@@ -168,7 +169,7 @@ namespace Conselheiro_Amoroso
             this.labelBarra.BackColor = System.Drawing.Color.Transparent;
             this.labelBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBarra.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelBarra.Location = new System.Drawing.Point(382, 3);
+            this.labelBarra.Location = new System.Drawing.Point(369, -2);
             this.labelBarra.Name = "labelBarra";
             this.labelBarra.Size = new System.Drawing.Size(132, 24);
             this.labelBarra.TabIndex = 11;
@@ -187,7 +188,7 @@ namespace Conselheiro_Amoroso
             this.labelBarraValue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelBarraValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelBarraValue.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.labelBarraValue.Location = new System.Drawing.Point(747, 70);
+            this.labelBarraValue.Location = new System.Drawing.Point(747, 65);
             this.labelBarraValue.Name = "labelBarraValue";
             this.labelBarraValue.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.labelBarraValue.Size = new System.Drawing.Size(45, 24);
@@ -200,6 +201,26 @@ namespace Conselheiro_Amoroso
             this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
             this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker1_RunWorkerCompleted);
             // 
+            // timerOculos
+            // 
+            this.timerOculos.Interval = 30;
+            this.timerOculos.Tick += new System.EventHandler(this.timerOculos_Tick);
+            // 
+            // labelDica
+            // 
+            this.labelDica.AutoEllipsis = true;
+            this.labelDica.AutoSize = true;
+            this.labelDica.BackColor = System.Drawing.Color.Transparent;
+            this.labelDica.Location = new System.Drawing.Point(280, 218);
+            this.labelDica.MaximumSize = new System.Drawing.Size(430, 0);
+            this.labelDica.MinimumSize = new System.Drawing.Size(430, 0);
+            this.labelDica.Name = "labelDica";
+            this.labelDica.Size = new System.Drawing.Size(430, 13);
+            this.labelDica.TabIndex = 14;
+            this.labelDica.Text = "Dica";
+            this.labelDica.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelDica.Visible = false;
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
@@ -211,11 +232,6 @@ namespace Conselheiro_Amoroso
             this.panel1.TabIndex = 13;
             this.panel1.Click += new System.EventHandler(this.panel1_Click);
             // 
-            // timerOculos
-            // 
-            this.timerOculos.Interval = 30;
-            this.timerOculos.Tick += new System.EventHandler(this.timerOculos_Tick);
-            // 
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -223,9 +239,9 @@ namespace Conselheiro_Amoroso
             | System.Windows.Forms.AnchorStyles.Right)));
             this.progressBar1.BackColor = System.Drawing.Color.Red;
             this.progressBar1.ForeColor = System.Drawing.Color.DarkRed;
-            this.progressBar1.Location = new System.Drawing.Point(93, 25);
+            this.progressBar1.Location = new System.Drawing.Point(79, 22);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(693, 42);
+            this.progressBar1.Size = new System.Drawing.Size(707, 42);
             this.progressBar1.Step = 1;
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 3;
@@ -239,6 +255,7 @@ namespace Conselheiro_Amoroso
             this.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.bg;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(800, 599);
+            this.Controls.Add(this.labelDica);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.labelBarraValue);
             this.Controls.Add(this.labelBarra);
@@ -276,8 +293,9 @@ namespace Conselheiro_Amoroso
         private System.Windows.Forms.Timer timerUpdateBarra;
         private System.Windows.Forms.Label labelBarraValue;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timerOculos;
+        private DoubleBufferPanel panel1;
+        private System.Windows.Forms.Label labelDica;
     }
 }
 

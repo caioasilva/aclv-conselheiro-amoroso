@@ -72,6 +72,12 @@
     <Compile Include="Ajuda.Designer.cs">
       <DependentUpon>Ajuda.cs</DependentUpon>
     </Compile>
+    <Compile Include="DoubleBufferedButton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoubleBufferedButton.Designer.cs">
+      <DependentUpon>DoubleBufferedButton.cs</DependentUpon>
+    </Compile>
     <Compile Include="DoubleBufferedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -101,13 +107,18 @@
     <Compile Include="Sobre.Designer.cs">
       <DependentUpon>Sobre.cs</DependentUpon>
     </Compile>
+    <None Include="Resources\vitonha.jpg" />
     <None Include="Resources\oculos2.png" />
+    <None Include="Resources\bg2.jpg" />
     <Content Include="Resources\tdfw.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\oculos.png" />
     <EmbeddedResource Include="Ajuda.resx">
       <DependentUpon>Ajuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoubleBufferedButton.resx">
+      <DependentUpon>DoubleBufferedButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

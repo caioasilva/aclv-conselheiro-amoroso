@@ -92,5 +92,65 @@ namespace Conselheiro_Amoroso
             Form a = new DoubleBufferedButton();
             a.ShowDialog();
         }
+
+        private void buttonMain_MouseDown(object sender, MouseEventArgs e)
+        {
+            buttonMain.BackgroundImage = (Properties.Resources.bt_iniciar_down);
+        }
+
+        private void buttonMain_MouseLeave(object sender, EventArgs e)
+        {
+            buttonMain.BackgroundImage = (Properties.Resources.bt_iniciar);
+        }
+
+        private void buttonMain_MouseEnter(object sender, EventArgs e)
+        {
+            buttonMain.BackgroundImage = (Properties.Resources.bt_iniciar_hover);
+        }
+
+        private void buttonMain_MouseUp(object sender, MouseEventArgs e)
+        {
+            buttonMain.BackgroundImage = (Properties.Resources.bt_iniciar);
+        }
+
+        private void buttonAjuda_MouseDown(object sender, MouseEventArgs e)
+        {
+            buttonAjuda.BackgroundImage = (Properties.Resources.bt_ajuda_down);
+        }
+
+        private void buttonAjuda_MouseEnter(object sender, EventArgs e)
+        {
+            buttonAjuda.BackgroundImage = (Properties.Resources.bt_ajuda_hover);
+        }
+
+        private void buttonAjuda_MouseLeave(object sender, EventArgs e)
+        {
+            buttonAjuda.BackgroundImage = (Properties.Resources.bt_ajuda);
+        }
+
+        private void buttonAjuda_MouseUp(object sender, MouseEventArgs e)
+        {
+            buttonAjuda.BackgroundImage = (Properties.Resources.bt_ajuda);
+        }
+
+        private void buttonSobre_MouseDown(object sender, MouseEventArgs e)
+        {
+            buttonSobre.BackgroundImage = (Properties.Resources.bt_sobre_down);
+        }
+
+        private void buttonSobre_MouseEnter(object sender, EventArgs e)
+        {
+            buttonSobre.BackgroundImage = (Properties.Resources.bt_sobre_hover);
+        }
+
+        private void buttonSobre_MouseLeave(object sender, EventArgs e)
+        {
+            buttonSobre.BackgroundImage = (Properties.Resources.bt_sobre);
+        }
+
+        private void buttonSobre_MouseUp(object sender, MouseEventArgs e)
+        {
+            buttonSobre.BackgroundImage = (Properties.Resources.bt_sobre);
+        }
     }
 }

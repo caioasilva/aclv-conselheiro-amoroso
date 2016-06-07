@@ -14,7 +14,7 @@ namespace Conselheiro_Amoroso
         public DoubleBufferedButton()
         {
             InitializeComponent();
-            this.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.vitonha;
+            this.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.bt_vt;
         }
     }
 }

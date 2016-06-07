@@ -107,9 +107,18 @@
     <Compile Include="Sobre.Designer.cs">
       <DependentUpon>Sobre.cs</DependentUpon>
     </Compile>
-    <None Include="Resources\vitonha.jpg" />
     <None Include="Resources\oculos2.png" />
     <None Include="Resources\bg2.jpg" />
+    <None Include="Resources\bt_vt.jpg" />
+    <None Include="Resources\bt_iniciar.jpg" />
+    <None Include="Resources\bt_iniciar_down.jpg" />
+    <None Include="Resources\bt_iniciar_hover.jpg" />
+    <None Include="Resources\bt_ajuda.jpg" />
+    <None Include="Resources\bt_sobre.jpg" />
+    <None Include="Resources\bt_ajuda_down.jpg" />
+    <None Include="Resources\bt_ajuda_hover.jpg" />
+    <None Include="Resources\bt_sobre_down.jpg" />
+    <None Include="Resources\bt_sobre_hover.jpg" />
     <Content Include="Resources\tdfw.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -157,7 +157,7 @@ namespace Conselheiro_Amoroso
             updateForm();
         }
 
-        private void buttonSim_MouseHover(object sender, EventArgs e)
+        private void buttonSim_MouseEnter(object sender, EventArgs e)
         {
             
             buttonSim.BackgroundImage= (Properties.Resources.bt_sim_hover);
@@ -183,7 +183,7 @@ namespace Conselheiro_Amoroso
             buttonNao.BackgroundImage = (Properties.Resources.bt_nao_down);
         }
 
-        private void buttonNao_MouseHover(object sender, EventArgs e)
+        private void buttonNao_MouseEnter(object sender, EventArgs e)
         {
             buttonNao.BackgroundImage = (Properties.Resources.bt_nao_hover);
         }
@@ -203,7 +203,7 @@ namespace Conselheiro_Amoroso
             buttonVoltar.BackgroundImage = (Properties.Resources.back_down);
         }
 
-        private void buttonVoltar_MouseHover(object sender, EventArgs e)
+        private void buttonVoltar_MouseEnter(object sender, EventArgs e)
         {
             buttonVoltar.BackgroundImage = (Properties.Resources.back_hover);
             labelVoltar.Visible = true;
@@ -252,7 +252,7 @@ namespace Conselheiro_Amoroso
             perguntas[0].texto = "Você é bonito(a)?";
             perguntas[0].valor_s = 10;
             perguntas[0].valor_n = -20;
-            perguntas[1].texto = "Ela é bonita(o)?";
+            perguntas[1].texto = "Ela/Ele é bonita(o)?";
             perguntas[1].valor_s = -10;
             perguntas[1].valor_n = 10;
             perguntas[2].texto = "Você faz computação?";

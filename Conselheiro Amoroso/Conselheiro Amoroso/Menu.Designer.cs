@@ -40,34 +40,70 @@
             // 
             // buttonMain
             // 
-            this.buttonMain.Font = new System.Drawing.Font("Segoe Print", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonMain.Location = new System.Drawing.Point(116, 296);
+            this.buttonMain.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.bt_iniciar;
+            this.buttonMain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonMain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonMain.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonMain.FlatAppearance.BorderSize = 0;
+            this.buttonMain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonMain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonMain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonMain.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMain.Location = new System.Drawing.Point(91, 292);
+            this.buttonMain.Margin = new System.Windows.Forms.Padding(0);
             this.buttonMain.Name = "buttonMain";
-            this.buttonMain.Size = new System.Drawing.Size(197, 96);
+            this.buttonMain.Size = new System.Drawing.Size(319, 106);
             this.buttonMain.TabIndex = 0;
-            this.buttonMain.Text = "Iniciar";
             this.buttonMain.UseVisualStyleBackColor = true;
             this.buttonMain.Click += new System.EventHandler(this.buttonMain_Click);
+            this.buttonMain.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonMain_MouseDown);
+            this.buttonMain.MouseEnter += new System.EventHandler(this.buttonMain_MouseEnter);
+            this.buttonMain.MouseLeave += new System.EventHandler(this.buttonMain_MouseLeave);
+            this.buttonMain.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonMain_MouseUp);
             // 
             // buttonAjuda
             // 
-            this.buttonAjuda.Location = new System.Drawing.Point(116, 398);
+            this.buttonAjuda.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.bt_ajuda;
+            this.buttonAjuda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonAjuda.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonAjuda.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonAjuda.FlatAppearance.BorderSize = 0;
+            this.buttonAjuda.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonAjuda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonAjuda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAjuda.Location = new System.Drawing.Point(91, 402);
+            this.buttonAjuda.Margin = new System.Windows.Forms.Padding(0);
             this.buttonAjuda.Name = "buttonAjuda";
-            this.buttonAjuda.Size = new System.Drawing.Size(100, 23);
+            this.buttonAjuda.Size = new System.Drawing.Size(156, 86);
             this.buttonAjuda.TabIndex = 1;
-            this.buttonAjuda.Text = "Ajuda";
             this.buttonAjuda.UseVisualStyleBackColor = true;
             this.buttonAjuda.Click += new System.EventHandler(this.buttonAjuda_Click);
+            this.buttonAjuda.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonAjuda_MouseDown);
+            this.buttonAjuda.MouseEnter += new System.EventHandler(this.buttonAjuda_MouseEnter);
+            this.buttonAjuda.MouseLeave += new System.EventHandler(this.buttonAjuda_MouseLeave);
+            this.buttonAjuda.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonAjuda_MouseUp);
             // 
             // buttonSobre
             // 
-            this.buttonSobre.Location = new System.Drawing.Point(222, 398);
+            this.buttonSobre.BackgroundImage = global::Conselheiro_Amoroso.Properties.Resources.bt_sobre;
+            this.buttonSobre.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.buttonSobre.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSobre.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.buttonSobre.FlatAppearance.BorderSize = 0;
+            this.buttonSobre.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.buttonSobre.FlatAppearance.MouseOverBackColor = System.Drawing.Color.White;
+            this.buttonSobre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSobre.Location = new System.Drawing.Point(254, 402);
+            this.buttonSobre.Margin = new System.Windows.Forms.Padding(0);
             this.buttonSobre.Name = "buttonSobre";
-            this.buttonSobre.Size = new System.Drawing.Size(91, 23);
+            this.buttonSobre.Size = new System.Drawing.Size(156, 86);
             this.buttonSobre.TabIndex = 2;
-            this.buttonSobre.Text = "Sobre";
             this.buttonSobre.UseVisualStyleBackColor = true;
             this.buttonSobre.Click += new System.EventHandler(this.buttonSobre_Click);
+            this.buttonSobre.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonSobre_MouseDown);
+            this.buttonSobre.MouseEnter += new System.EventHandler(this.buttonSobre_MouseEnter);
+            this.buttonSobre.MouseLeave += new System.EventHandler(this.buttonSobre_MouseLeave);
+            this.buttonSobre.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonSobre_MouseUp);
             // 
             // timer1
             // 

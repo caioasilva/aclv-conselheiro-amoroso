@@ -71,7 +71,7 @@ namespace Conselheiro_Amoroso
             this.buttonSim.Click += new System.EventHandler(this.buttonSim_Click);
             this.buttonSim.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonSim_MouseDown);
             this.buttonSim.MouseLeave += new System.EventHandler(this.buttonSim_MouseLeave);
-            this.buttonSim.MouseHover += new System.EventHandler(this.buttonSim_MouseHover);
+            this.buttonSim.MouseEnter += new System.EventHandler(this.buttonSim_MouseEnter);
             this.buttonSim.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonSim_MouseUp);
             // 
             // buttonNao
@@ -96,7 +96,7 @@ namespace Conselheiro_Amoroso
             this.buttonNao.Click += new System.EventHandler(this.buttonNao_Click);
             this.buttonNao.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonNao_MouseDown);
             this.buttonNao.MouseLeave += new System.EventHandler(this.buttonNao_MouseLeave);
-            this.buttonNao.MouseHover += new System.EventHandler(this.buttonNao_MouseHover);
+            this.buttonNao.MouseEnter += new System.EventHandler(this.buttonNao_MouseEnter);
             this.buttonNao.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonNao_MouseUp);
             // 
             // labelNumero
@@ -131,7 +131,7 @@ namespace Conselheiro_Amoroso
             this.buttonVoltar.Click += new System.EventHandler(this.buttonVoltar_Click);
             this.buttonVoltar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.buttonVoltar_MouseDown);
             this.buttonVoltar.MouseLeave += new System.EventHandler(this.buttonVoltar_MouseLeave);
-            this.buttonVoltar.MouseHover += new System.EventHandler(this.buttonVoltar_MouseHover);
+            this.buttonVoltar.MouseEnter += new System.EventHandler(this.buttonVoltar_MouseEnter);
             this.buttonVoltar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.buttonVoltar_MouseUp);
             // 
             // labelPergunta

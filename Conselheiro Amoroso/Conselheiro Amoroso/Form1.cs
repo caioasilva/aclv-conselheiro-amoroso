@@ -112,7 +112,7 @@ namespace Conselheiro_Amoroso
                 }
                 else if (chance >= 40 && chance < 60 && respPergunta[9] == false)
                 {
-                    labelDica.Text = "Vai com calma e busca interesses em comum. \n\"Liber inops servo divite felicior\"";
+                    labelDica.Text = "Vai com calma e busque interesses em comum. \n\"Liber inops servo divite felicior\"";
                 }
                 else if (chance >= 60 && chance < 80 && respPergunta[14] == true)
                 {
@@ -250,76 +250,77 @@ namespace Conselheiro_Amoroso
         {
 
             perguntas[0].texto = "Você é bonito(a)?";
-            perguntas[0].valor_s = 10;
-            perguntas[0].valor_n = -20;
+            perguntas[0].valor_s = 7;
+            perguntas[0].valor_n = -18;
             perguntas[1].texto = "Ela/Ele é bonita(o)?";
-            perguntas[1].valor_s = -10;
+            perguntas[1].valor_s = -14;
             perguntas[1].valor_n = 10;
             perguntas[2].texto = "Você faz computação?";
             perguntas[2].valor_s = -10;
             perguntas[2].valor_n = 10;
             perguntas[3].texto = "Você faz o mesmo curso que ela/ele?";
-            perguntas[3].valor_s = 20;
-            perguntas[3].valor_n = -5;
+            perguntas[3].valor_s = 15;
+            perguntas[3].valor_n = -6;
             perguntas[4].texto = "Vocês se conhecem?";
-            perguntas[4].valor_s = 5;
-            perguntas[4].valor_n = -5;
+            perguntas[4].valor_s = 6;
+            perguntas[4].valor_n = -10;
             perguntas[5].texto = "Ela/ele tem namorado(a)?";
-            perguntas[5].valor_s = -40;
+            perguntas[5].valor_s = -42;
             perguntas[5].valor_n = 5;
             perguntas[6].texto = "Você é muito amigo(a) dessa pessoa?";
             perguntas[6].valor_s = 10;
             perguntas[6].valor_n = 0;
             perguntas[7].texto = "Você acha que está na 'friendzone'?";
             perguntas[7].valor_s = -50;
-            perguntas[7].valor_n = 10;
+            perguntas[7].valor_n = 11;
             perguntas[8].texto = "Vocês já se beijaram alguma vez?";
             perguntas[8].valor_s = 20;
             perguntas[8].valor_n = 0;
             perguntas[9].texto = "Você tem vergonha de ir falar com essa pessoa?";
             perguntas[9].valor_s = -20;
-            perguntas[9].valor_s = 15;
+            perguntas[9].valor_n = 15;
             perguntas[10].texto = "Por acaso ela/ele é sua/seu ex?";
-            perguntas[10].valor_s = 0;
+            perguntas[10].valor_s = 4;
             perguntas[10].valor_n = 0;
             perguntas[11].texto = "Ela/Ele te odeia?";
             perguntas[11].valor_s = -100;
             perguntas[11].valor_n = 10;
             perguntas[12].texto = "Vocês têm interesses em comum?";
-            perguntas[12].valor_s = 20;
-            perguntas[12].valor_n = -20;
+            perguntas[12].valor_s = 15;
+            perguntas[12].valor_n = -15;
             perguntas[13].texto = "Ela/Ela gosta de outra pessoa?";
             perguntas[13].valor_s = -20;
             perguntas[13].valor_n = 10;
             perguntas[14].texto = "Ela/Ele já te disse que não quer ficar com você?";
             perguntas[14].valor_s = -50;
-            perguntas[14].valor_n = 10;
+            perguntas[14].valor_n = 8;
             perguntas[15].texto = "Vocês moram em cidades diferentes?";
             perguntas[15].valor_s = -30;
-            perguntas[15].valor_n = 5;
+            perguntas[15].valor_n = 9;
             perguntas[16].texto = "Vocês moram em estados diferentes?";
             perguntas[16].valor_s = -30;
             perguntas[16].valor_n = 5;
             perguntas[17].texto = "Ela/Ele te despreza?";
             perguntas[17].valor_s = -50;
             perguntas[17].valor_n = 10;
-            perguntas[18].texto = "A família dessa pessoa gosta de você?";
+            perguntas[18].texto = "A família dessa pessoa te conhece e gosta de você?";
             perguntas[18].valor_s = 20;
-            perguntas[18].valor_n = -10;
+            perguntas[18].valor_n = -6;
             perguntas[19].texto = "As amigas dessa pessoa gostam de você?";
-            perguntas[19].valor_s = 20;
+            perguntas[19].valor_s = 15;
             perguntas[19].valor_n = -10;
             perguntas[20].texto = "Alguma amiga(o) dessa pessoa quer ficar com você?";
-            perguntas[20].valor_s = -40;
+            perguntas[20].valor_s = -32;
             perguntas[20].valor_n = 0;
             perguntas[21].texto = "Você vê essa pessoa frequentemente?";
             perguntas[21].valor_s = 15;
-            perguntas[21].valor_n = -20;
+            perguntas[21].valor_n = -18;
             perguntas[22].texto = "Vocês continuaram conversando depois disso?";
-            perguntas[22].valor_s = 30;
+            perguntas[22].valor_s = 33;
             perguntas[22].valor_n = -20;
+            //segunda chance
             perguntas[23].valor_n = 0;
-            perguntas[23].valor_s = 30;
+            perguntas[23].valor_s = 15;
             perguntas[23].texto = "Você tem certeza que deseja continuar?";
 
             Arvore arv = new Arvore();
